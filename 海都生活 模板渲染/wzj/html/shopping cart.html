@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="UTF-8">
+		<title>购物车</title>
+		<link rel="stylesheet" type="text/css" href="../css/all.css" />
+		<link rel="stylesheet" type="text/css" href="../css/cart.css" />
+		<script src="../libs/jquery-1.5.2.min.js"></script>
+		<script src="../js/top.js"></script>
+		<script src="../libs/angular.js"></script>
+		<script src="../libs/angular-animate.js"></script>
+		<script src="../libs/angular-ui-router.js"></script>
+		<script src="../js/cart.js"></script>
+	</head>
+
+	<body ng-controller="myCtrl">
+		<!-----------------文字顶部------------------------>
+		<div class="shortcut-2015">
+			<div class="pW">
+				<ul class="fr topTh">
+					<li id="HD_MEMBERZONE" class="login">
+						欢迎来到海都生活!
+						<a href="/html/sign in.html">请登录</a>
+						<a href="/html/sign up.html" style="color: #C81623;margin-left: 5px;">免费注册</a>
+					</li>
+					<li class="myOrder">
+						<a href="#">我的订单</a>
+					</li>
+					<li class="myOrder">
+						<a href="#">企业采购</a>
+					</li>
+					<li class="menus">
+						<a href="#" class="hd-top-logo t">我的海都</a>
+						<b></b>
+						<span class="outline"></span>
+						<span class="blank"></span>
+						<div class="dd">
+							<div>
+								<a href="#" class="hd-top-logo">我的订单</a>
+							</div>
+							<div>
+								<a href="#" class="hd-top-logo">我的红包</a>
+							</div>
+							<div>
+								<a href="#" class="hd-top-logo">我的收藏</a>
+							</div>
+							<div>
+								<a href="#" class="hd-top-logo">账户余额</a>
+							</div>
+						</div>
+					</li>
+					<li class=" menus">
+						<a href="#" class="hd-top-logo t" target="_blank">帮助中心</a>
+						<b></b>
+						<span class="outline"></span>
+						<span class="blank"></span>
+						<div class="dd">
+							<div>
+								<a href="#" class="hd-top-logo" target="_blank">购物流程</a>
+							</div>
+							<div>
+								<a href="#" class="hd-top-logo" target="_blank">支付中心</a>
+							</div>
+							<div>
+								<a href="#" class="hd-top-logo" target="_blank">售后服务</a>
+							</div>
+							<div>
+								<a href="#" class="hd-top-logo" target="_blank">特色服务</a>
+							</div>
+							<div>
+								<a href="#" class="hd-top-logo" target="_blank">商家合作</a>
+							</div>
+					</li>
+					<li class="d4 tShow">
+						<q></q>
+						<div class="dd">
+							<div class="sf_wx"></div>
+							<div class="sf_wx_t">微信扫描二维码,随时随地与海鲜生活网亲密接触,精彩活动.劲爆优惠触手可得!</div>
+						</div>
+						<div class="corner">
+							<div class="aBg"></div>
+							<div class="aCt"></div>
+						</div>
+					</li>
+				</ul>
+				</div>
+			</div>
+
+			<!--这是购物车主页-->
+			<div ui-view>
+				
+			</div>
+		
+		
+		<!-----------------foot联系方式栏--------------------->
+		<div id="footer">
+				<div class="hdmall-feature">
+					<ul>
+						<li>
+							<div class="feature-item fi1"></div>
+						</li>
+						<li>
+							<div class="feature-item fi2"></div>
+						</li>
+						<li>
+							<div class="feature-item fi3"></div>
+						</li>
+						<li>
+							<div class="feature-item fi4"></div>
+						</li>
+					</ul>
+				</div>
+				<div class="foot">
+					<div class="pageFooter">
+						<div class="right">
+
+							<ul>
+								<li class="title">购物流程</li>
+								<li>
+									<a href="article.php?id=109" title="用户注册流程">用户注册流程</a>
+								</li>
+								<li>
+									<a href="article.php?id=118" title="购物流程">购物流程</a>
+								</li>
+								<li>
+									<a href="article.php?id=119" title="订单查询">订单查询</a>
+								</li>
+							</ul>
+
+							<ul>
+								<li class="title">配送中心</li>
+								<li>
+									<a href="article.php?id=121" title="配送说明">配送说明</a>
+								</li>
+								<li>
+									<a href="article.php?id=124" title="自提说明">自提说明</a>
+								</li>
+								<li>
+									<a href="article.php?id=125" title="验货与签收">验货与签收</a>
+								</li>
+							</ul>
+
+							<ul>
+								<li class="title">支付中心</li>
+								<li>
+									<a href="article.php?id=126" title="线上支付">线上支付</a>
+								</li>
+							</ul>
+
+							<ul>
+								<li class="title">售后服务</li>
+								<li>
+									<a href="article.php?id=21" title="退换货原则">退换货原则</a>
+								</li>
+								<li>
+									<a href="article.php?id=23" title="退款说明">退款说明</a>
+								</li>
+							</ul>
+
+							<ul>
+								<li class="title">特色服务</li>
+								<li>
+									<a href="article.php?id=116" title="生态卡">生态卡</a>
+								</li>
+								<li>
+									<a href="article.php?id=137" title="线下体验店选购">线下体验店选购</a>
+								</li>
+							</ul>
+
+							<ul>
+								<li class="title">商家合作</li>
+								<li>
+									<a href="article.php?id=117" title="商城规则">商城规则</a>
+								</li>
+								<li>
+									<a href="article.php?id=138" title="商家入驻">商家入驻</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="clear"></div>
+					<div class="bottom">
+						<div class="clear1"></div>
+						<div class="siteinfo">
+							<p style="width:570px;">
+
+								<span>
+							<a href="article.php?id=5" target="_blank">关于我们</a>
+						</span>
+
+								<span class="separation">|</span>
+								<span>
+							<a href="article.php?id=141" target="_blank">关注我们</a>
+						</span>
+
+								<span class="separation">|</span>
+								<span>
+							<a href="article.php?id=4" target="_blank">联系我们</a>
+						</span>
+
+								<span class="separation">|</span>
+								<span>
+							<a href="store.php?act=list" target="_blank">线下门店</a>
+						</span>
+
+								<span class="separation">|</span>
+								<span>
+							<a href="article.php?id=140" target="_blank">媒体报道</a>
+						</span>
+
+								<span class="separation">|</span>
+								<span>
+							<a href="article.php?id=121" target="_blank">配送方式</a>
+						</span>
+							</p>
+							<p style="width:490px;">
+								<a href="http://www.miibeian.gov.cn/" target="_blank">闽ICP备08105575号</a>
+								Copyright © 2015 All Rights Reserved 海都生活网版权所有,违者必究
+							</p>
+						</div>
+					</div>
+				</div>
+				<div align="center">
+				</div>
+				<img id="flyBuy">
+
+			</div>
+	</body>
+	<script type="text/javascript">
+		angular.module('myApp', ['ngAnimate', 'ui.router'])
+		.controller('myCtrl',['$scope',function(){
+			
+		}])
+		.config(['$stateProvider', '$urlRouterProvider',function($stateProvider, $urlRouterProvider){
+			$stateProvider
+			.state('cart',{
+				url:'/cart',
+				templateUrl:'cart.html',
+				controller:'cartController'
+			})
+			.state('cart.messages',{
+				url:'/cart_message',
+				templateUrl:'cart_message.html',
+				controller:'msgController'
+			})
+			.state('cart.success',{
+				url:'/cart_message',
+				templateUrl:'cart_success.html',
+				controller:'sucController'
+			})
+			$urlRouterProvider.otherwise('/cart')
+		}])
+	</script>
+</html>

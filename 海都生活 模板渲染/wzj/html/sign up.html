@@ -8,6 +8,7 @@
 		<script src="../libs/jquery-1.5.2.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="../css/all.css" />
 		<link rel="stylesheet" type="text/css" href="../css/login.css" />
+		<script src="../js/login.js"></script>
 	</head>
 
 	<body>
@@ -64,7 +65,7 @@
 								登录密码:
 							</label>
 							<span class="regM">
-								<input type="text" name="password" id="password1" class="regInput" maxlength="80" />
+								<input type="password" name="password" id="password1" class="regInput" maxlength="80" />
 							</span>
 							<span id="password_notice" class="reg_error2">
 								
@@ -77,6 +78,8 @@
 							<em class="default" id="pwd_middle">中</em>
 							<em class="default" id="pwd_high">强</em>
 						</li>
+						
+						
 						<!--确认密码-->
 						<li class="regMb30">
 							<label>
@@ -90,71 +93,65 @@
 						</li>
 						<!--手机号码-->
 						<li class="regMb30">
-					<label>
+							<label>
 						<font>*</font>						手机：
 					</label>
-					<span class="regM defaultBorder"><input name="extend_field5" class="regInput" type="text"></span>
-				</li>
-				<!--验证码-->
-				<li id="yzcode_3" class="regMb30">
-					<label>
+							<span class="regM defaultBorder"><input name="extend_field5" class="regInput" type="text"></span>
+						</li>
+						<!--验证码-->
+						<li id="yzcode_3" class="regMb30">
+							<label>
 						<font>*</font>
 						验证码：
 					</label>
-					<input class="regCodeInput defaultBorder" name="captcha" type="text" id="inputCode">
-					<div class="code" id="checkCode" onclick="createCode()">点击获取</div>
-				</li>
-				<!--用户协议-->
-				<li class="regPl88">
-					<span class="regM" style="margin-left:29px">
+							<input class="regCodeInput defaultBorder" name="captcha" type="text" id="inputCode">
+							<div class="code" id="checkCode" onclick="createCode()">点击获取</div>
+						</li>
+						<!--用户协议-->
+						<li class="regPl88">
+							<span class="regM" style="margin-left:29px">
 						<input id="fack" name="agreement" value="1" checked="checked" style="border:none;" type="checkbox">
 					我已看过并接受《<a href="article.php?cat_id=-1" style="color:blue" target="_blank">用户协议</a>》					</span>
-				</li>
-				<!--立即注册-->
-				<li id="sub_per" class="register regPl88 regMt10" style="margin-left:29px; padding-bottom:30px">
-					<input name="act" value="act_register" type="hidden">
-					<input name="back_act" value="" type="hidden">
-					<input name="Submit" value="立即注册" class="registerNow" type="submit">
-				</li>
-				<script language="javascript" type="text/javascript">
-			var code;
+						</li>
+						<!--立即注册-->
+						<li id="sub_per" class="register regPl88 regMt10" style="margin-left:29px; padding-bottom:30px">
+							<input name="act" value="act_register" type="hidden">
+							<input name="back_act" value="" type="hidden">
+							<input name="Submit" value="立即注册"  class="registerNow" type="submit">
+						</li>
+						<script language="javascript" type="text/javascript">
+							var code;
 
-			function createCode() {
-				code = "";
-				var codeLength = 6; //验证码的长度
-				var checkCode = document.getElementById("checkCode");
-				var codeChars = new Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9,
-					'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
-					'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'); //所有候选组成验证码的字符，当然也可以用中文的
-				for(var i = 0; i < codeLength; i++) {
-					var charNum = Math.floor(Math.random() * 52);
-					code += codeChars[charNum];
-				}
-				if(checkCode) {
-					checkCode.className = "code";
-					checkCode.innerHTML = code;
-				}
-			}
-			      function validateCode()
-			      {
-			          var inputCode = document.getElementById("inputCode").value;
-			          if (inputCode.length <= 0)
-			          {
-			              alert("请输入验证码！");
-			          }
-			          else if (inputCode.toUpperCase() != code.toUpperCase())
-			          {
-			              alert("验证码输入有误！");
-			              createCode();
-			          }
-			          else
-			          {
-			              alert("验证码正确！");
-			          }       
-			      }
-		</script>
-				
-				
+							function createCode() {
+								code = "";
+								var codeLength = 6; //验证码的长度
+								var checkCode = document.getElementById("checkCode");
+								var codeChars = new Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9,
+									'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
+									'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'); //所有候选组成验证码的字符，当然也可以用中文的
+								for(var i = 0; i < codeLength; i++) {
+									var charNum = Math.floor(Math.random() * 52);
+									code += codeChars[charNum];
+								}
+								if(checkCode) {
+									checkCode.className = "code";
+									checkCode.innerHTML = code;
+								}
+							}
+
+							function validateCode() {
+								var inputCode = document.getElementById("inputCode").value;
+								if(inputCode.length <= 0) {
+									alert("请输入验证码！");
+								} else if(inputCode.toUpperCase() != code.toUpperCase()) {
+									alert("验证码输入有误！");
+									createCode();
+								} else {
+									alert("验证码正确！");
+								}
+							}
+						</script>
+
 					</form>
 				</ul>
 			</div>

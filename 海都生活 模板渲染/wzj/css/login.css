@@ -386,3 +386,18 @@ input[type="checkbox"] {
 	text-align: center;
 	vertical-align: middle;
 }
+
+.pw-defule #pwd_lower {
+	background-color: red;
+}
+
+.pw-medium #pwd_lower,
+.pw-medium #pwd_middle {
+	background-color: orange;
+}
+
+.pw-strong #pwd_lower,
+.pw-strong #pwd_middle,
+.pw-strong #pwd_high {
+	background-color: red;
+}

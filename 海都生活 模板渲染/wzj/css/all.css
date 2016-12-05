@@ -71,7 +71,9 @@ a.red {
 	line-height:33px;
 	z-index:9;
 }
-
+.hide {
+	display:none;
+}
 
 .topTh .d3 q, .topTh .d4 q {
 	height:16px;
