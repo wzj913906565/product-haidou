@@ -3,14 +3,70 @@
 
 	<head>
 		<meta charset="UTF-8">
-		<title>用户中心_海都生活商城</title>
-		<link rel="icon" href="../images/favicon.ico">
-		<link rel="stylesheet" type="text/css" href="../css/all.css" />
+		<title>用户中心_海都生活商城_登录</title>
+		
+		<link rel="stylesheet" type="text/css" href="../css/login.css" />
+		<link rel="stylesheet" type="text/css" href="../css/all.css"/>
+		<script src="../libs/jquery-1.5.2.min.js"></script>
+		<script src="../js/login.js"></script>
 	</head>
 
 	<body>
+		<!--头部-->
+		<div id="header">
+			<a href="../index.html">
+				<img src="../images/login/logo.png" />
+				<span>欢迎注册</span>
+			</a>
+		</div>
+		<div class="clear"></div>
 
-						<!--foot联系方式栏-->
+<!--注册-->
+<div class="main">
+	<div class="login_inner">
+		<div class="login login1">
+			<form name="formLogin" action="#">
+				<h1>海都会员</h1>
+				<div class="aDiv">
+					<b></b>
+					<a href="sign up.html" class="reg_title">立即注册</a>
+				</div>
+				<div class="login_box clear">
+					<ul>
+						<!--用户名-->
+						<li>
+							<span class="border">
+								<label class="login-label" for="un"></label>
+								<input type="text" id="un" class="loginText" name="username" placeholder="邮箱/用户名/已验证手机" />
+							</span>
+						</li>
+						<!--密码-->
+						<li class="m-t12">
+							<span class="border">
+								<label for="pwd" class="password-label"></label>
+								<input type="password" id="pwd" class="loginText" name="password" placeholder="密码" />
+							</span>
+						</li>
+						<!--验证码-->
+						<li class="m-t12 login_checkcode"> 
+							<span class="code-border">
+								<input type="text" id="vcd" class="regCodeInput" name="captcha" placeholder="验证码" id="inputCode" />
+							</span>
+							<div class="code" id="checkCode" onclick="createCode()">点击获取</div>
+						</li>
+						<!--登录-->
+						<li id="btn_sub" class="m-t5">
+							<input type="submit" id="login_button" class="login_btn" name="submit" value="登录" />
+						</li>
+					</ul>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+
+		<!--foot联系方式栏-->
 		<div id="footer">
 			<div class="hdmall-feature">
 				<ul>
@@ -143,7 +199,42 @@
 			<img id="flyBuy">
 
 		</div>
-
 	</body>
+				<script language="javascript" type="text/javascript">
+			var code;
 
+			function createCode() {
+				code = "";
+				var codeLength = 6; //验证码的长度
+				var checkCode = document.getElementById("checkCode");
+				var codeChars = new Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9,
+					'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
+					'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'); //所有候选组成验证码的字符，当然也可以用中文的
+				for(var i = 0; i < codeLength; i++) {
+					var charNum = Math.floor(Math.random() * 52);
+					code += codeChars[charNum];
+				}
+				if(checkCode) {
+					checkCode.className = "code";
+					checkCode.innerHTML = code;
+				}
+			}
+			      function validateCode()
+			      {
+			          var inputCode = document.getElementById("inputCode").value;
+			          if (inputCode.length <= 0)
+			          {
+			              alert("请输入验证码！");
+			          }
+			          else if (inputCode.toUpperCase() != code.toUpperCase())
+			          {
+			              alert("验证码输入有误！");
+			              createCode();
+			          }
+			          else
+			          {
+			              alert("验证码正确！");
+			          }       
+			      }
+		</script>
 </html>

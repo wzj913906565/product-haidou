@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>用户中心_海都生活商城_注册</title>
+		<link rel="icon" href="../images/favicon.ico">
+		<script src="../libs/jquery-1.5.2.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="../css/all.css" />
+		<link rel="stylesheet" type="text/css" href="../css/login.css" />
+	</head>
+
+	<body>
+		<!--头部-->
+		<div id="header">
+			<a href="../index.html">
+				<img src="../images/login/logo.png" />
+				<span>欢迎注册</span>
+			</a>
+		</div>
+		<div class="clear"></div>
+
+		<!--主体-->
+		<div class="main">
+			<div id="preDiv" class="reg_main">
+				<ul>
+					<form action="#" method="post">
+						<li class="regMb30 regMb31">
+							<div class="login">
+								我已经注册,现在就
+								<a href="sign in.html">登录</a>
+							</div>
+						</li>
+						<!--账户名-->
+						<li class="regMb30">
+							<label>
+								<font>*</font>
+								账户名:
+							</label>
+							<span class="regM">
+								<input type="text" name="username" id="username" class="regInput" maxlength="80" />
+							</span>
+							<span id="username_notice" class="reg_error1">
+								
+							</span>
+						</li>
+						<!--邮箱-->
+						<li class="regMb30">
+							<label>
+								<font>*</font>
+								邮箱:
+							</label>
+							<span class="regM">
+								<input type="text" name="email" id="email" class="regInput" maxlength="80" />
+							</span>
+							<span id="email_notice" class="reg_error1">
+								
+							</span>
+						</li>
+						<!--登录密码-->
+						<li>
+							<label>
+								<font>*</font>
+								登录密码:
+							</label>
+							<span class="regM">
+								<input type="text" name="password" id="password1" class="regInput" maxlength="80" />
+							</span>
+							<span id="password_notice" class="reg_error2">
+								
+							</span>
+						</li>
+						<!--密码强度检测-->
+						<li id="pwdStrong" class="safetyLayer regPl191">
+							<font style="font-size:12px;">安全程度：</font>
+							<em class="default" id="pwd_lower">弱</em>
+							<em class="default" id="pwd_middle">中</em>
+							<em class="default" id="pwd_high">强</em>
+						</li>
+						<!--确认密码-->
+						<li class="regMb30">
+							<label>
+						<font>*</font>
+						确认密码：
+					</label>
+							<span class="regM defaultBorder">
+						<input class="regInput" name="confirm_password" id="conform_password"  type="password">
+					</span>
+							<span id="conform_password_notice" class="reg_error1"></span>
+						</li>
+						<!--手机号码-->
+						<li class="regMb30">
+					<label>
+						<font>*</font>						手机：
+					</label>
+					<span class="regM defaultBorder"><input name="extend_field5" class="regInput" type="text"></span>
+				</li>
+				<!--验证码-->
+				<li id="yzcode_3" class="regMb30">
+					<label>
+						<font>*</font>
+						验证码：
+					</label>
+					<input class="regCodeInput defaultBorder" name="captcha" type="text" id="inputCode">
+					<div class="code" id="checkCode" onclick="createCode()">点击获取</div>
+				</li>
+				<!--用户协议-->
+				<li class="regPl88">
+					<span class="regM" style="margin-left:29px">
+						<input id="fack" name="agreement" value="1" checked="checked" style="border:none;" type="checkbox">
+					我已看过并接受《<a href="article.php?cat_id=-1" style="color:blue" target="_blank">用户协议</a>》					</span>
+				</li>
+				<!--立即注册-->
+				<li id="sub_per" class="register regPl88 regMt10" style="margin-left:29px; padding-bottom:30px">
+					<input name="act" value="act_register" type="hidden">
+					<input name="back_act" value="" type="hidden">
+					<input name="Submit" value="立即注册" class="registerNow" type="submit">
+				</li>
+				<script language="javascript" type="text/javascript">
+			var code;
+
+			function createCode() {
+				code = "";
+				var codeLength = 6; //验证码的长度
+				var checkCode = document.getElementById("checkCode");
+				var codeChars = new Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9,
+					'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
+					'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'); //所有候选组成验证码的字符，当然也可以用中文的
+				for(var i = 0; i < codeLength; i++) {
+					var charNum = Math.floor(Math.random() * 52);
+					code += codeChars[charNum];
+				}
+				if(checkCode) {
+					checkCode.className = "code";
+					checkCode.innerHTML = code;
+				}
+			}
+			      function validateCode()
+			      {
+			          var inputCode = document.getElementById("inputCode").value;
+			          if (inputCode.length <= 0)
+			          {
+			              alert("请输入验证码！");
+			          }
+			          else if (inputCode.toUpperCase() != code.toUpperCase())
+			          {
+			              alert("验证码输入有误！");
+			              createCode();
+			          }
+			          else
+			          {
+			              alert("验证码正确！");
+			          }       
+			      }
+		</script>
+				
+				
+					</form>
+				</ul>
+			</div>
+		</div>
+
+		<!--foot联系方式栏-->
+		<div id="footer">
+			<div class="hdmall-feature">
+				<ul>
+					<li>
+						<div class="feature-item fi1"></div>
+					</li>
+					<li>
+						<div class="feature-item fi2"></div>
+					</li>
+					<li>
+						<div class="feature-item fi3"></div>
+					</li>
+					<li>
+						<div class="feature-item fi4"></div>
+					</li>
+				</ul>
+			</div>
+			<div class="foot">
+				<div class="pageFooter">
+					<div class="right">
+
+						<ul>
+							<li class="title">购物流程</li>
+							<li>
+								<a href="article.php?id=109" title="用户注册流程">用户注册流程</a>
+							</li>
+							<li>
+								<a href="article.php?id=118" title="购物流程">购物流程</a>
+							</li>
+							<li>
+								<a href="article.php?id=119" title="订单查询">订单查询</a>
+							</li>
+						</ul>
+
+						<ul>
+							<li class="title">配送中心</li>
+							<li>
+								<a href="article.php?id=121" title="配送说明">配送说明</a>
+							</li>
+							<li>
+								<a href="article.php?id=124" title="自提说明">自提说明</a>
+							</li>
+							<li>
+								<a href="article.php?id=125" title="验货与签收">验货与签收</a>
+							</li>
+						</ul>
+
+						<ul>
+							<li class="title">支付中心</li>
+							<li>
+								<a href="article.php?id=126" title="线上支付">线上支付</a>
+							</li>
+						</ul>
+
+						<ul>
+							<li class="title">售后服务</li>
+							<li>
+								<a href="article.php?id=21" title="退换货原则">退换货原则</a>
+							</li>
+							<li>
+								<a href="article.php?id=23" title="退款说明">退款说明</a>
+							</li>
+						</ul>
+
+						<ul>
+							<li class="title">特色服务</li>
+							<li>
+								<a href="article.php?id=116" title="生态卡">生态卡</a>
+							</li>
+							<li>
+								<a href="article.php?id=137" title="线下体验店选购">线下体验店选购</a>
+							</li>
+						</ul>
+
+						<ul>
+							<li class="title">商家合作</li>
+							<li>
+								<a href="article.php?id=117" title="商城规则">商城规则</a>
+							</li>
+							<li>
+								<a href="article.php?id=138" title="商家入驻">商家入驻</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="clear"></div>
+				<div class="bottom">
+					<div class="clear1"></div>
+					<div class="siteinfo">
+						<p style="width:570px;">
+
+							<span>
+							<a href="article.php?id=5" target="_blank">关于我们</a>
+						</span>
+
+							<span class="separation">|</span>
+							<span>
+							<a href="article.php?id=141" target="_blank">关注我们</a>
+						</span>
+
+							<span class="separation">|</span>
+							<span>
+							<a href="article.php?id=4" target="_blank">联系我们</a>
+						</span>
+
+							<span class="separation">|</span>
+							<span>
+							<a href="store.php?act=list" target="_blank">线下门店</a>
+						</span>
+
+							<span class="separation">|</span>
+							<span>
+							<a href="article.php?id=140" target="_blank">媒体报道</a>
+						</span>
+
+							<span class="separation">|</span>
+							<span>
+							<a href="article.php?id=121" target="_blank">配送方式</a>
+						</span>
+						</p>
+						<p style="width:490px;">
+							<a href="http://www.miibeian.gov.cn/" target="_blank">闽ICP备08105575号</a>
+							Copyright © 2015 All Rights Reserved 海都生活网版权所有,违者必究
+						</p>
+					</div>
+				</div>
+			</div>
+			<div align="center">
+			</div>
+			<img id="flyBuy">
+
+		</div>
+
+	</body>
+
+</html>
