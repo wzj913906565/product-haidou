@@ -22,11 +22,18 @@ $(function(){
 		$(this).removeClass('hover');
 	});
 	
-	/************顶部banner控制*************/
-//	 $(".topclose").click(function() {
-//          $(".topclose").hide();
-//          $(".banner").slideUp(500)
-//      });
+//顶部隐藏的导航栏
+	$(function(){
+		if($(".floatBar").length > 0){
+		var floatBar=function(){
+			var floatBarTop = $(document).scrollTop(),startTop=$(".navmenu").offset().top;
+			(floatBarTop > startTop) ? $(".floatBar").removeClass("hide") : $(".floatBar").addClass("hide");
+			(floatBarTop > startTop) ? $("#PageTopHideMenu").removeClass("hide") : $("#PageTopHideMenu").addClass("hide");
+		};
+		$(window).bind("scroll", floatBar);
+		floatBar();
+	}
+});
 
 //返回顶部
 $(function(){
@@ -51,7 +58,7 @@ $(function(){
 	  $(".topclose").click(function(){$(".topclose").hide();$(".banner").slideUp(500)});
 	}	
 	$("#ticket_close").click(function(){$("#ticket_close").hide();$(".q_ticket").slideUp(500)});
-});
+})
 	
 	
 //	首页购物车弹出
@@ -68,6 +75,33 @@ function prevTimers() {
 function allTimers() {
 	return $('#pager a span');
 }
+
+//轮播图
+//$(function(){
+//	  $('#indexslider').slides({
+//		  effect: 'fade, fade',
+//		  crossfade: true,
+//		  container:'index-img',
+//		  paginationClass: 'index-pagination',
+//		  preloadImage: '',//loading ͼƬ��ַ
+//		  play:6000,
+//		  fadeSpeed: 500,
+//		  pause:10,
+//		  generatePagination: false,
+//		  animationStart: function(current){
+//			   $('.index-pagination span').stop().animate({width:0}).hide();
+//			  }	,
+//		  animationComplete: function(current){
+//			   var $back=$('.back');
+//			   var leftw=(current-1)*34;
+//			   $back.animate({left:leftw},1000,'easeOutBack');
+//			   $('.index-pagination li').eq(current-1).find('span').show().animate({width:30},6000);
+//},
+//		  slidesLoaded: function() {
+//		  $('.index-pagination li').eq(0).find('span').animate({width:30},6000);
+//		  }
+//	  });
+//})
 
 $(function(){
 	  $('#indexslider').slides({
@@ -94,6 +128,9 @@ $(function(){
 		  }
 	  });
 })
+
+
+
 
 //侧栏点击出现
  var fn=function(o){
@@ -179,7 +216,18 @@ $(function(){
 			$(this).find('.num').css({'display':'block','background':'white','color':'#666'}).siblings('.word').hide().css({'display':'none','background':'','color':''});
 		})
 	})
-		
+
+//楼层距离
+$(function(){
+	var w=$(window).width()
+	console.log(w)
+	if(w<=1587){
+		$('#box').css('left','0px')
+	}
+	else{
+		$('#box').css('left','10vw')
+	}
+})
 	
 	
 

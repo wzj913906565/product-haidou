@@ -3,6 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>购物车</title>
+		<link rel="icon" href="../images/favicon.ico">
 		<link rel="stylesheet" type="text/css" href="../css/all.css" />
 		<link rel="stylesheet" type="text/css" href="../css/cart.css" />
 		<script src="../libs/jquery-1.5.2.min.js"></script>
@@ -235,18 +236,18 @@
 			$stateProvider
 			.state('cart',{
 				url:'/cart',
-				templateUrl:'cart.html',
-				controller:'cartController'
+				templateUrl:'cart.html'
+//				controller:'cartController'
 			})
 			.state('cart.messages',{
 				url:'/cart_message',
 				templateUrl:'cart_message.html',
-				controller:'msgController'
+//				controller:'msgController'
 			})
 			.state('cart.success',{
 				url:'/cart_message',
 				templateUrl:'cart_success.html',
-				controller:'sucController'
+//				controller:'sucController'
 			})
 			$urlRouterProvider.otherwise('/cart')
 		}])

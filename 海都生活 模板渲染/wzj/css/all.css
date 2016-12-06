@@ -255,6 +255,55 @@ a.red {
 	border-left: 8px dashed rgba(0, 0, 0, 0);
 	border-right: 8px dashed rgba(0, 0, 0, 0);
 }
+/*隐藏*/
+.fixed {
+	position: fixed;
+	z-index: 10;
+}
+.floatBar{
+	height: 43px;
+	position: fixed;
+	width: 100%;
+	top: 0;
+	background-color: white;
+	opacity: 0.97;
+	box-shadow: 0px 1px 5px darkgray;
+	left: 0;
+	border-bottom: 1px solid white;
+}
+.floatBar .logo{
+	float: left;
+	width: 165px;
+	height: 43px;
+	padding-left: 10px;
+}
+.floatBar .logo span{
+	background: url(../images/header.png) no-repeat 0px -50px;
+	width: 91px;
+	height: 35px;
+	display: block;
+	margin-top: 8px;
+}
+.floatBar .nav{
+	float: left;
+	height: 33px;
+	padding: 10px 0px 0px 60px;
+}
+.floatBar .nav a{
+	display: block;
+	width: 60px;
+	height: 21px;
+	line-height: 21px;
+	float: left;
+	font-size: 12px;
+	text-align: center;
+	margin-right: 15px;
+}
+.floatBar .nav a .cur{
+	background-color: green;
+	border-radius: 2px;
+	color: white;
+}
 						/*logo头部效果*/
 #hd1512-header{
 	padding:0;
@@ -368,7 +417,7 @@ a.red {
 	position:absolute;
 	top:-1px;
 	left:154px;
-	width:40px;
+	width: 40px;
 	height:34px;
 	text-align:center;
 	line-height:34px;
@@ -604,7 +653,20 @@ a.red {
 	overflow:hidden;
 	background:#009745;
 }
-.navmenu .categories a.topall {
+#topall{
+	height:40px;
+	line-height:34px;
+	display:block;
+	margin:0px;
+	padding:0px;
+	color:#fff;
+	font-size:16px;
+	font-family:Microsoft YaHei;
+	width:200px;
+	text-decoration:none;
+	text-align: center;
+}
+.navmenu .categories a .topall {
 	height:40px;
 	line-height:34px;
 	display:block;
@@ -980,103 +1042,83 @@ a.submit5:hover {
 	text-decoration:underline;
 }
 				/*轮播图*/
-.index-main {
-	position:relative;
-	width:100%;
-	margin:0 auto;
-	height:480px;
-}
-.index-main-box {
-	position:relative;
-	display:block;
-	overflow:hidden;
-	height:480px;
-}
+
+
 #indexslider {
-	width:100%;
-	left:50%;
-	margin: 0 auto;
-	height:480px;
+	width: 100vw;
+	height: 480px;
+	position: relative;
 }
+
 .index-img {
-	display:block;
-	width:100%;
-	height:480px;
-	overflow:hidden;
+	width: 100vw;
+	height: 480px;    
+	position: relative;
 }
+
 .index-img img {
-	width:60%;
-	height:480px;
+	width: 100vw;
+	height: 480px;
+	
 }
+
 .index-pagination {
-	position:absolute;
-	z-index:66;
-	top:400px;
-	left:50%;
-	height:30px;
-	width:210px;
-	margin-left:-100px;
-	text-align:center;
-	z-index: 10;
+	position: absolute;
+	z-index: 66;
+	top: 410px;
+	left: 50%;
+	height: 20px;
+	width: 170px;
+	margin-left: -110px;
+	text-align: center;
+	/*outline: 5px solid green;*/
 }
+
 .index-pagination li {
-	display:inline-block;
-	width:30px;
-	position:relative;
-	float:left;
-	height:23px;
-	margin-right:4px;
-	overflow:hidden;
+	display: inline-block;
+	width: 30px;
+	position: relative;
+	float: left;
+	height: 10px;
+	background-color: white;
+	margin-right: 4px;
+	overflow: hidden;
+	outline: 1px solid black;
 }
+
 .index-pagination li a {
-	position:relative;
-	z-index:666;
-	display:block;
-	padding:16px 0px 5px 0px;
-	height:2px;
-	color:#5f6a72;
-	text-align:center;
+	position: relative;
+	z-index: 666;
+	display: block;
+	padding: 16px 0px 5px 0px;
+	height: 2px;
+	color: #5f6a72;
+	text-align: center;
+	outline: 1px solid green;
 }
+
 .index-pagination li a div {
-	position:relative;
-	z-index:555;
-	display:block;
-	height:5px;
-	border: 1px solid black;
-	background:white;
+	position: relative;
+	z-index: 555;
+	display: block;
+	height: 2px;
+	background: #c9242b;
+	outline: 1px solid green;
 }
+
 .index-pagination li a div span {
-	position:absolute;
-	top:0px;
-	left:0px;
-	height:5px;
-	width:0px;
-	background:green;
-	z-index: 10;
+	position: absolute;
+	top: -18px;
+	left: 0px;
+	height: 15px;
+	width: 0px;
+	background: green;
+	outline: 1px solid yellow;
 }
-.index-pagination li a div em {
-	position:absolute;
-	display:none;
-	width:27px;
-	height:10px;
-	/*background:url(../images/car-ico.png) no-repeat;*/
-	top:-5px;
-	left:1px;
-}
-.index-pagination li.current a {
-	color:#0b4da2;
-	_color:#c9242b;
-}
-.index-pagination li.back {
-	/*background:url(../images/car-ico.png) no-repeat;*/
-	display:block;
-	position:absolute;
-	width:27px;
-	height:10px;
-	left:0px;
-	top:4px;
-	z-index:444;
-}
+
+
+
+
 /*--------页脚----------*/
 .pageFooter {
 	width:1200px;
